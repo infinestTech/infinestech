@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FlipCard.css */
+.flip-card {
+    perspective: 1000px;
+    border-radius: 15px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    background-image: url('../images/backk3.png');
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back-gro-und {
+    background-image: url('../images/divBack2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Apply square aspect ratio only on smaller screens */
+/* @media (max-width: 768px) {
+    .back-gro-und {
+        background-size: auto 100%;
+    }
+} */
+
+.back {
+    transform: rotateY(-180deg);
+}
+
+.our-ser {
+    text-shadow: 2px 1px #000;
+}
+
+body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+body {
+    background-color: black;
+}
+
+.scrollBox {
+    max-height: calc(100vh - 200px);
+    animation: scroll 15s linear infinite; /* Adjust the duration as needed */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0%); /* Start from the bottom */
+    }
+    100% {
+        transform: translateY(-100%); /* Scroll to the top */
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');

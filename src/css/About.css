@@ -1,0 +1,15 @@
+.poda{
+    background-image: url('../images/divBack2.jpg');
+    background-size: cover;
+}
+/* .best-image{
+    background-color: black;
+}    */
+
+.our-ser{
+    text-shadow: 2px 1px #000;
+   }
+
+body{
+    background-color: #000;
+}

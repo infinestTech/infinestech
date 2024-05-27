@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+// Color and Style Variables
+$col1: #070f12;
+$col2: #000000;
+$grad: linear-gradient(135deg, $col1, $col2);
+$cubic-1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$cubic-2: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$shadow: 0 6px 16px darken($col2, 10%);
+
+// Base styles
+.container-iconstyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+ .heading{
+  font-size: 20px;
+ }
+.card-iconstyle,
+.card-iconstyle-two,
+.card-iconstyle-three {
+  position: relative;
+  width: 30rem;
+  height: 20rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  perspective: 150rem;
+  transition: transform 0.8s $cubic-1;
+  transform-style: preserve-3d;
+}
+
+.front-iconstyle,
+.front-iconstyle-two,
+.front-iconstyle-three,
+.back-iconstyle,
+.back-iconstyle-two,
+.back-iconstyle-three {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  transition: transform 0.8s $cubic-2;
+  transform-style: preserve-3d;
+}
+
+.front-iconstyle, .front-iconstyle-two, .front-iconstyle-three {
+  background-image: $grad;
+  box-shadow: $shadow, inset 0 0 15px darken($col1, 15%);
+  z-index: 2;
+}
+
+.back-iconstyle, .back-iconstyle-two, .back-iconstyle-three {
+  background-image: $grad;
+  transform: rotateY(180deg);
+  justify-content: flex-end;
+  z-index: 1;
+}
+
+.card-iconstyle:hover, .card-iconstyle-two:hover, .card-iconstyle-three:hover {
+  transform: rotateY(180deg);
+}
+
+.links-iconstyle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  max-width: 660px;
+}
+
+.fab {
+  flex: 0 1 calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 200px;
+}
+
+.text-md {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.back-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Media queries for responsive adjustments
+@media (max-width: 768px) {
+  .container-iconstyle {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .card-iconstyle,
+  .card-iconstyle-two,
+  .card-iconstyle-three {
+    width: 100%;
+    height: 25rem;
+    margin: 10px 0;
+    align-items: center;
+  }
+
+  .links-iconstyle {
+    max-width: 660px;
+    gap: 40px;
+  }
+
+  .fab {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+
+  .text-md {
+    max-width: none;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1300px) {
+  .container-iconstyle {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .card-iconstyle,
+  .card-iconstyle-two,
+  .card-iconstyle-three {
+    width: calc(50% - 40px);
+    margin: 20px;
+    box-sizing: border-box;
+  }
+
+  .front-iconstyle,
+  .front-iconstyle-two,
+  .front-iconstyle-three,
+  .back-iconstyle,
+  .back-iconstyle-two,
+  .back-iconstyle-three {
+    box-shadow: none;
+    transition: none;
+  }
+
+  .links-iconstyle {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .fab {
+    width: 100%;
+    margin: 5px 0;
+    align-items: center;
+  }
+
+  .text-md {
+    font-size: 0.9rem;
+  }
+
+  .text-6xl {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,235 @@
+// Define base variables
+:root {
+	--transition: 0.25s;
+	--spark: 1.8s;
+	--hue: 245;
+  }
+  
+  // Basic reset for box sizing
+  *, *:after, *:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  }
+  
+  html, body {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden !important; // Prevent horizontal scrolling
+	
+  }
+  
+  body {
+	//display: ;
+	place-items: center;
+	min-height: 100vh;
+	font-family: system-ui, sans-serif;
+	transition: background var(--transition);
+	
+  }
+  
+  .home-screen {
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	transition: background-position 0.5s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .content {
+	text-align: center;
+  }
+  
+  .logo {
+	max-width: 50rem;
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 3;
+  }
+  
+  // Galaxy button specific styles
+  .galaxy-button button {
+	--cut: 0.1em;
+	--active: 0;
+	--bg: radial-gradient(
+	  120% 120% at 126% 126%,
+	  gold 40%, // Primary color before hover
+	  black 50%, // Secondary color before hover
+	  hsl(var(--hue) 97% 61% / 0.5) 70% // Blue light effect
+	) 0 / 100% 100% no-repeat,
+	hsl(0, 0%, 0%);
+	background: var(--bg);
+	font-size: 2rem;
+	font-weight: 500;
+	border: 0;
+	cursor: pointer;
+	padding: 0.9em 1.3em;
+	display: flex;
+	align-items: center;
+	gap: 0.25em;
+	white-space: nowrap;
+	border-radius: 2rem;
+	position: relative;
+	box-shadow: 
+	  0 0 8em 0em hsl(var(--hue) 97% 61% / 0.3), // Soft blue glow around the button
+	  0 0.05em 0 0 gold inset,
+	  0 -0.05em 0 0 gold inset;
+	transition: box-shadow var(--transition), scale var(--transition), background var(--transition);
+	scale: calc(1 + (var(--active) * 0.1));
+	transform-style: preserve-3d;
+	perspective: 100vmin;
+	overflow: hidden;
+  
+	&:active {
+	  scale: 1;
+	}
+  
+	&:hover, &:focus-visible {
+	  --active: 1;
+	  --bg: radial-gradient(
+			120% 120% at 126% 126%,
+			hsl(var(--hue) calc(var(--active) * 97%) 98% / calc(var(--active) * 0.9)) 40%,
+			transparent 50%
+		  )
+		  calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+		  radial-gradient(
+			120% 120% at 120% 120%,
+			hsl(var(--hue) calc(var(--active) * 97%) 70% / calc(var(--active) * 1)) 30%,
+			transparent 70%
+		  )
+		  calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
+		  hsl(var(--hue) calc(var(--active) * 100%) calc(12% - (var(--active) * 8%)));
+	  background: var(--bg);
+	  box-shadow: 0 0 calc(var(--active) * 6em) calc(var(--active) * 3em) hsl(var(--hue) 97% 61% / 0.5),
+				  0 0.05em 0 0 hsl(var(--hue) calc(var(--active) * 97%) calc((var(--active) * 50%) + 30%)) inset,
+				  0 -0.05em 0 0 hsl(var(--hue) calc(var(--active) * 97%) calc(var(--active) * 10%)) inset;
+	}
+  }
+  
+  // Keyframes and animations
+  @keyframes orbit {
+	to {
+	  transform: translate(-50%, -50%) rotate(10deg) rotate(360deg) translateY(calc(var(--distance) * 1px));
+	}
+  }
+  
+  .star--static {
+	animation: none;
+	top: 50%;
+	left: 50%;
+	transform: translate(0, 0);
+	max-height: 4px;
+	filter: brightness(4);
+	opacity: 0.9;
+	animation:
+		move-x calc(var(--duration) * 0.1s) calc(var(--delay) * -0.1s) infinite linear,
+		move-y calc(var(--duration) * 0.2s) calc(var(--delay) * -0.2s) infinite linear;
+}
+
+.home-screen {
+	width: 100vw;
+	height: 100vh;
+	// background-image: url('../images/canvapng.png');
+	background-size: cover;
+	transition: background-position 0.5s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	z-index: 2;
+	position: relative;
+  }
+  
+  .content {
+	text-align: center;
+  }
+  
+  .logo {
+	max-width: 50rem; // Adjust based on your logo's size
+	margin-bottom: 20px;
+	position: relative;
+	z-index: 3;
+  }
+
+  .star, .star--static {
+	height: calc(var(--size) * 1px);
+	aspect-ratio: 1;
+	background: white;
+	border-radius: 50%;
+	position: absolute;
+	opacity: var(--alpha);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(10deg) rotate(0deg) translateY(calc(var(--distance) * 1px));
+	animation: orbit calc(var(--duration) * 1s) calc(var(--delay) * -1s) infinite linear;
+	
+	&.star--static {
+	  animation: none;
+	  max-height: 4px;
+	  filter: brightness(4);
+	  opacity: 0.9;
+	}
+  }
+
+  .galaxy, .galaxy__container, .galaxy__ring {
+	position: absolute;
+	width: 100%;
+	aspect-ratio: 1;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	overflow: hidden;
+	transform-style: preserve-3d;
+  }
+  
+  // Spark and backdrop styles
+  .spark, .backdrop {
+	position: absolute;
+	inset: 0;
+	border-radius: 2rem;
+	overflow: hidden;
+  }
+
+/* Existing CSS for larger screens remains unchanged */
+
+/* Responsive adjustments for tablets (screens smaller than 768px) */
+@media (max-width: 768px) {
+	.logo {
+	  max-width: 30rem; /* Smaller logo on tablets */
+	}
+  
+	.galaxy-button button {
+	  font-size: 1.5rem; /* Smaller text inside the button on tablets */
+	  padding: 0.7em 1em; /* Adjust padding to make the button smaller */
+	}
+  }
+  
+  /* Responsive adjustments for mobiles (screens smaller than 480px) */
+  @media (max-width: 480px) {
+	.content {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center; /* Center-align logo and button vertically */
+	}
+  
+	.logo {
+	  max-width: 20rem; /* Even smaller logo on mobiles */
+	  margin-bottom: 10px; /* Less space between logo and button */
+	}
+  
+	.galaxy-button button {
+	  font-size: 1.2rem; /* Smaller text for mobiles */
+	  padding: 0.5em 0.8em; /* Smaller button size for mobiles */
+	}
+  
+	/* Adjustments for touch interaction on mobile devices */
+	.galaxy-button button:active, .galaxy-button button:focus {
+	  /* Styles for when the button is touched */
+	  box-shadow: 0 0 4em 2em hsl(var(--hue) 97% 61% / 0.5); /* Example touch interaction style */
+	}
+  }
+  

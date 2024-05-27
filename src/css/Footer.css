@@ -1,0 +1,59 @@
+/* Footer.css */
+.contact-heading-container {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-heading {
+  cursor: pointer;
+  position: relative;
+  display: inline;
+  padding-bottom: 3px;
+}
+
+.contact-heading span {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-heading span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: rgb(202, 175, 26);
+  transition: width 0.3s ease-in-out;
+}
+
+.contact-heading span:hover::after,
+.contact-heading span:focus::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-heading-container {
+    padding-left: 20px;
+  }
+  .flex {
+    flex-direction: column;
+    
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-heading-container {
+    padding-left: 20px;
+  }
+  .lg:flex {
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact-heading-container {
+    padding-left: 20px;
+  }
+}

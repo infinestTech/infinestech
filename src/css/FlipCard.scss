@@ -1,0 +1,176 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    max-height: 600px;
+    max-width: 1200px; /* Adjust based on the total width of all cards plus margins */
+    min-height: 600px;
+    min-width: 1100px; /* Ensure this accommodates the minimum number of cards side by side */
+    display: flex;
+    justify-content: space-around; /* This will space items evenly including space at the edges */
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Wrap items to the next line if they don't fit */
+  }
+  
+  .panel {
+    height: 300px;
+    width: 350px; /* Adjust this based on the container's width and the desired number of cards */
+    margin: 10px; /* Margins added to create space between panels */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:hover {
+      .card {
+        filter: blur(1.5px);
+      }
+      .card1 {
+        background-size: 215% 135%;
+      }
+      .card2 {
+        background-size: 115% 115%;
+      }
+      .card3 {
+        background-size: 155% 115%;
+      }
+      .title {
+        color: rgba(133, 98, 4, 0.2);
+      }
+      .borderd {
+        border: 1px solid rgb(63, 48, 3);
+      }
+      .slide {
+        bottom: 0px;
+      }
+      .ring:before,
+      .ring:after {
+        transform: translateX(-50%) translateY(-50%) rotate(310deg);
+      }
+    }
+  }
+  .ring,
+  .card,
+  .borderd,
+  .slide,
+  .line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ring {
+    color: #8e6702;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 170px;
+  }
+  
+  .card {
+    background: #edbc1d;
+    position: relative;
+    transition: all 1s;
+    height: 300px;
+    width: 250px;
+    border: 1px solid rgb(159, 107, 1);
+    
+  }
+  
+  .card1 {
+    
+    background-repeat: no-repeat;
+    background-size: 200% 120%;
+    
+  }
+  
+  .card2 {
+    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+  }
+  
+  .card3 {
+    
+    background-repeat: no-repeat;
+    background-size: 140% 100%;
+  }
+  
+  .ring:before,
+  .ring:after {
+    content: "";
+    padding: 0.7em 0.4em;
+    position: absolute;
+    left: 50%;
+    width: 150%;
+    top: 50%;
+    display: block;
+    border: 5px solid #bf9303;
+    border-radius: 50%;
+    transition: transform 2s;
+    transform: translateX(-50%) translateY(-50%) rotate(50deg);
+  }
+  
+  .ring:before {
+    border-color: rgb(225, 183, 12) rgb(225, 183, 12) rgba(225, 183, 12)
+      rgba(0, 0, 0, 0);
+    z-index: -1;
+  }
+  
+  .ring:after {
+    border-color: rgb(239, 202, 13) rgb(239, 202, 13) rgb(239, 202, 13)
+    rgb(239, 202, 13);
+  }
+  
+  .title{
+    text-align: center;
+    position: absolute;
+    font-family: "Playfair Display";
+  }
+  
+  .title {
+    font-size: 30px;
+    transition: all 1s;
+    top: 0;
+    font-weight: bold;
+    color:  rgb(239, 202, 13);;
+  }
+  
+  .parat {
+    bottom: 0;
+    font-size: 16px;
+    font-family: "Raleway";
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .borderd {
+    position: absolute;
+    border: 1px solid rgba(123, 121, 117, 0.5);
+    height: 260px;
+    width: 180px;
+    transition: border 1s;
+    overflow: hidden;
+  }
+  
+  .slide {
+    height: 260px;
+    width: 180px;
+    position: absolute;
+    
+    bottom: -510px;
+    transition: bottom 2s;
+    flex-direction: column;
+  }
+  
+  .fa-plane {
+    font-size: 16px;
+  }
+  .parat{
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(245, 194, 8);
+    font-weight: bold;
+  }

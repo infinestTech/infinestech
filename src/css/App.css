@@ -1,0 +1,34 @@
+.App {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+    overflow: hidden; /* Prevent scrolling if not needed */
+    
+  }
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('../images/canvapng.png'); */
+    background-size: cover;
+    background-position: center;
+    pointer-events: none; /* Allows clicking through the canvas */
+    z-index: -1;
+    
+  }
+  .App {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .spaceSceneContainer {
+    position: fixed; /* or 'absolute' */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure this is below the z-index of HomeScreen */
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Satisfy&display=swap');

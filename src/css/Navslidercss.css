@@ -1,0 +1,22 @@
+
+
+.scrollBox {
+max-height: calc(100vh - 200px);
+animation: scroll 15s linear infinite;
+animation-fill-mode: forwards; /* Retains the final state after animation completes */
+}
+
+  
+  @keyframes scroll {
+    0% {
+      transform: translateY(-0%); /* Start from the bottom */
+    }
+    100% {
+      transform: translateY(-100%); /* Scroll to the top */
+    }
+  }
+
+  .serv-two{
+    background-image: url("../images/divBack2.jpg");
+  }
+  
