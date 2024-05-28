@@ -7,7 +7,7 @@ import "../css/App.css"
  import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
  import Combine from './Combine';
  import ContactForm from './ContactForm';
-import Footer from './Footer';
+
 
 const App = () => {
   // const [entered, setEntered] = useState(false);

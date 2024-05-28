@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/Card.css'; // Make sure this path is correct
 
 const Card = ({ img, title, content, flipDirection,className }) => {

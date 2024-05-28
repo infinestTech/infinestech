@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import img from '../images/logobird.png'
-import Footer from './Footer'
+
 import ParticleBackground from './ParticleBackground';
 import SocialSidebar from './SocialSideBar';
 import NavBar from './NavBar';

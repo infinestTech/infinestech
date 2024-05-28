@@ -6,24 +6,11 @@ import img4 from "../images/file3.webp";
 import img5 from "../images/file2.webp";
 import img6 from "../images/file1.webp";
 
-import { FaAngular } from "react-icons/fa6";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaNode } from "react-icons/fa";
-import { SiExpress } from "react-icons/si";
-import { FaPython } from "react-icons/fa";
-import { FaPhp } from "react-icons/fa";
-import { FaJava } from "react-icons/fa";
-import { DiMongodb } from "react-icons/di";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { SiMariadb } from "react-icons/si";
-import { IoLogoFirebase } from "react-icons/io5";
+
 import Footer from "./Footer";
 import logo from "../images/logobird.png";
 import ParticleBackground from "./ParticleBackground";
-import Card from "./Card";
+
 import "../css/About.css";
 import SocialSidebar from "./SocialSideBar";
 import Icon from "./Icon";
