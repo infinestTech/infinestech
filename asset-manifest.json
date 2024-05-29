@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/infinestech/static/css/main.9265a559.css",
+    "main.js": "/infinestech/static/js/main.f037a8fa.js",
+    "static/media/test.mp4": "/infinestech/static/media/test.d63b948a22d2b9d2e12e.mp4",
+    "static/media/digital3.webp": "/infinestech/static/media/digital3.735acf5335c19802a0df.webp",
+    "static/media/file2.webp": "/infinestech/static/media/file2.d5ac01c061498201fc98.webp",
+    "static/media/test1.webp": "/infinestech/static/media/test1.acfcd579f560a0480149.webp",
+    "static/media/file1.webp": "/infinestech/static/media/file1.14ac1eee16033fb7297f.webp",
+    "static/media/file4.webp": "/infinestech/static/media/file4.255944dd986a35a9547b.webp",
+    "static/media/client1.webp": "/infinestech/static/media/client1.058a18706b3f565e7665.webp",
+    "static/media/file3.webp": "/infinestech/static/media/file3.33987985bb63a1875f51.webp",
+    "static/media/file5.webp": "/infinestech/static/media/file5.7b1333bc9426e7a3ca2b.webp",
+    "static/media/backk3.png": "/infinestech/static/media/backk3.a022a48bc5653b8d34f4.png",
+    "static/media/logobird.png": "/infinestech/static/media/logobird.b191eaeb9e1e04e55b07.png",
+    "static/media/file6.webp": "/infinestech/static/media/file6.931663fddc9552cc84e1.webp",
+    "static/media/divBack2.jpg": "/infinestech/static/media/divBack2.47516ea0b3fd04a45aff.jpg",
+    "static/media/24x7.webp": "/infinestech/static/media/24x7.fb7d0a6ea3aac9462ac7.webp",
+    "index.html": "/infinestech/index.html",
+    "static/media/down-arrow-svgrepo-com.svg": "/infinestech/static/media/down-arrow-svgrepo-com.15f8763ac7dd9198f3cb11d0c15d46fc.svg",
+    "main.9265a559.css.map": "/infinestech/static/css/main.9265a559.css.map",
+    "main.f037a8fa.js.map": "/infinestech/static/js/main.f037a8fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9265a559.css",
+    "static/js/main.f037a8fa.js"
+  ]
+}
